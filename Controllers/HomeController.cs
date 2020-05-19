@@ -27,7 +27,7 @@ namespace CoreExample.Controllers
         }
 
         [HttpPost]
-        public IActionResult Regist(string qq)
+        public IActionResult Regist(string UserEmail)
         {
             return View();
         }
