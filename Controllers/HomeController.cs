@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using CoreExample.Models;
@@ -20,13 +16,33 @@ namespace CoreExample.Controllers
 
         public IActionResult Index()
         {
+            _logger.LogInformation("Test");
             return View();
+        }
+
+        [HttpGet]
+        public IActionResult Regist()
+        {
+            return RedirectToAction(nameof(Index), TempData["StatusMessage"] = "Regist Status Message");
+        }
+
+        [HttpPost]
+        public IActionResult Regist(string qq)
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Index(string qwer)
+        {
+            return RedirectToAction(nameof(Index));
         }
 
         public IActionResult Privacy()
         {
             return View();
         }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

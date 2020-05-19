@@ -29,6 +29,8 @@
             </div>
         </nav>
     </header>
+    <partial name="_CookieConsentPartial" />
+    <partial name="_StatusMessage" model="@TempData["StatusMessage"]" />
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
